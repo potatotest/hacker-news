@@ -3,11 +3,11 @@ a simple Hacker News (https://news.ycombinator.com) reader app. with lazy loadin
 
 Screenshots: 📷
 Home Screen
-![Screenshot](/screenshot/ss1.png)
+<img src="/screenshot/ss1.png" width="300">
 Item Screen (enter by tap comment will go Item Screen)
-![Screenshot](/screenshot/ss2.png)
+<img src="/screenshot/ss2.png" width="300">
 Web Preview Screen (enter by tap the underline url will go Web Preview Screen)
-![Screenshot](/screenshot/ss3.png)
+<img src="/screenshot/ss3.png" width="300">
 
 
 Technologies Used: ☕️ 🐍 ⚛️
