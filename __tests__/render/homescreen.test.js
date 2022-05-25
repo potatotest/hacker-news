@@ -3,6 +3,17 @@ import { cleanup, render, waitFor } from '@testing-library/react-native';
 import React from 'react';
 import { Provider } from 'react-redux';
 jest.mock('axios');
+const mockedNavigate = jest.fn();
+
+jest.mock('@react-navigation/native', () => {
+  const actualNav = jest.requireActual('@react-navigation/native');
+  return {
+    ...actualNav,
+    useNavigation: () => ({
+      navigate: mockedNavigate,
+    }),
+  };
+});
 // const mockedAxios = axios as jest.Mocked<typeof axios>;
 import store from '../../src/redux/store';
 import { HomeScreen } from '../../src/screen/HomeScreen';
@@ -11,8 +22,9 @@ import { act } from 'react-test-renderer';
 import { TopStoryView } from '../../src/component/story/TopStoryView';
 jest.useFakeTimers()
 let storyList = { data: [12345, 123456, 123, 12, 1] }
+
 axios.get.mockImplementation((url) => {
-    console.log("url", url)
+    
     if ("https://hacker-news.firebaseio.com/v0/topstories.json" === url) {
         return Promise.resolve(storyList)
     }
