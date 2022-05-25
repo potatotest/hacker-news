@@ -1,0 +1,4 @@
+export enum SETTING {
+    INITIAL_DATA_COUNT = 5,
+    INITIAL_COMMENT_DATA_COUNT = 3
+}
